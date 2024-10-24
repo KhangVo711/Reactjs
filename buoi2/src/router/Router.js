@@ -4,6 +4,8 @@ import Login from '../containers/Login';
 import Car from '../containers/Car';
 import Hello from '../containers/Hello';
 import Add from '../containers/Add';
+import Register from '../containers/Register';
+import Profile from '../containers/Profile';
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -12,6 +14,14 @@ export const router = createBrowserRouter([
     {
         path: "/login",
         element: <Login />
+    },
+    {
+        path: "/register",
+        element: <Register />
+    },
+    {
+        path: "/profile",
+        element: <Profile />
     },
     {
         path: "/car",

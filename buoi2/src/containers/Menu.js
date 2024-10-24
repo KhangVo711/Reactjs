@@ -12,7 +12,7 @@ export default function Menu(props) {
 
     const nameUser = props.name
 
-    const renderItem = list.map((ls) => <Item link={ls.link} content={ls.content} />)
+    const renderItem = list.map((ls) => <Item key={ls} link={ls.link} content={ls.content} />)
 
     return (
         <div className="flex justify-around bg-slate-700 text-white w-full h-12 items-center">

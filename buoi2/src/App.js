@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="relative h-screen">
-      <Menu name = {name}/>
+    <Menu name = {name}/>
     <Button/>
     <Outlet/>
     </div>
