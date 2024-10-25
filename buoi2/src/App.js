@@ -1,21 +1,28 @@
-
-import { Outlet } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import './App.css';
 import Button from './containers/Button.js';
-import Car from './containers/Car.js';
-import Hello from './containers/Hello.js';
-import Login from './containers/Login.js';
+import { ContextProvider } from './containers/Context.js';
 import Menu from './containers/Menu.js';
 
+
 function App() {
-  const name = "Khang Vo"
+  // const name = "Khang Vo";
+  const location = useLocation(); // Sử dụng useLocation để lấy đường dẫn hiện tại
 
   return (
-    <div className="relative h-screen">
-    <Menu name = {name}/>
-    <Button/>
-    <Outlet/>
-    </div>
+    <ContextProvider>
+      <div className="relative h-screen">
+        {/* Điều kiện để hiển thị Menu và Button */}
+        {location.pathname !== '/login' && location.pathname !== '/register' && (
+          <>
+            <Menu />
+            <Button />
+          </>
+        )}
+        <Outlet /> {/* Outlet để render các component con theo router */}
+      </div>
+    </ContextProvider>
   );
 }
 

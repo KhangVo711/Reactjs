@@ -1,6 +1,7 @@
 import Information from "./Information";
 import Item from "./Item";
-
+import { useContext } from "react";
+import { Context } from "./Context";
 export default function Menu(props) {
 
     const list = [
@@ -9,8 +10,8 @@ export default function Menu(props) {
         { link: "/car", content: "Car" },
         { link: "/add", content: "Add" },
     ]
-
-    const nameUser = props.name
+    const {isData} = useContext(Context);
+    const nameUser = isData.username;
 
     const renderItem = list.map((ls) => <Item key={ls} link={ls.link} content={ls.content} />)
 
