@@ -6,6 +6,7 @@ import Hello from '../containers/Hello';
 import Add from '../containers/Add';
 import Register from '../containers/Register';
 import Profile from '../containers/Profile';
+import Product from '../containers/Product';
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
     children: [
       { path: "login", element: <Login /> },    // Các route con
       { path: "register", element: <Register /> },
+      { path: "product", element: <Product /> },
       { path: "profile", element: <Profile /> },
       { path: "car", element: <Car /> },
       { path: "hello", element: <Hello /> },
